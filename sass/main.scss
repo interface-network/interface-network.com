@@ -1,0 +1,12 @@
+/** Import Bootstrap functions */
+@import "bootstrap/scss/functions";
+
+/** Import theme assets */
+@import "common/fonts";
+
+/** Import theme variables and custom css */
+@import "common/variables";
+@import "common/custom";
+
+/** Import Bootstrap */
+@import "bootstrap/scss/bootstrap";
