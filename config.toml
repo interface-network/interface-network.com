@@ -1,5 +1,5 @@
 # The URL the site will be built for
-base_url = "https://interface-network.com"
+base_url = "https://interface-network.github.io/site/"
 title = "Interface Network"
 
 # Whether to automatically compile all Sass files in the sass directory
