@@ -1,8 +1,28 @@
 {% extends "base.html" %}
 {% block content %}
-<div class="col-12">
-    <h1 class="text-center display-1">{{ config.title }}</h1>
-    <p>{{ section.description }}</p>
+<div class="col-12 min-vh-100 ps-3 border-start border-dark border-3">
+{% if section.extra.definition %}
+{% for definition in section.extra.definition %}
+<h4 class="mb-0 pt-5">{{ definition.word | safe }}</h4>
+<p class="small fw-bold">etymology: <em class="fw-light">{{ definition.etymology | safe }}</em></p>
+<ol>
+{% for meaning in definition[definition.word] %}
+<li class="fst-italic">{{ meaning.text | safe }}</li>
+{% endfor %}
+{% endfor %}
+</ol>
+{% endif %}
+<h1 class="col-3 pt-5 display-1 fw-bolder">{{ config.title | safe }}</h1>
+<p class="lead pb-5">{{ section.description }}</p>
+<div class="row mt-5">
+{% for highlight in section.extra.highlight %}
+<div class="col-12 col-md-4 mb-5">
+<h5>{{ highlight.heading | safe }}</h5>
+<p>{{ highlight.text | safe }}</p>
+<a class="link-dark" href="{{ highlight.link | safe }}">read more...</a>
+</div>
+{% endfor %}
+</div>
 </div>
 {{ section.content | safe }}
 {% endblock content %}
