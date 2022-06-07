@@ -1,17 +1,18 @@
 {%- import 'macros/head.html' as macros_head -%}
+{%- import 'macros/nav.html' as macros_nav -%}
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="style.css">
-
-    <title>{% block title %}{{ config.title }}{% endblock title %}</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{% block title %}{{ config.title }} | {{ section.title }}{% endblock title %}</title>
+{{ macros_head::stylesheets() }}
 </head>
 <body>
-    <main>
-        {% block page_title %}<h1>{{ config.title }}</h1>{% endblock page_title %}
-        {% block content %}{% endblock content %}
-    </main>
+<main>
+{{ macros_nav::navbar() }}
+{% block page_title %}<h1>{{ section.title }}</h1>{% endblock page_title %}
+{% block content %}{% endblock content %}
+</main>
 </body>
 </html>

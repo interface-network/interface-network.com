@@ -1,0 +1,10 @@
+{% macro navbar() %}
+{% set top_section = get_section(path="_index.md") %}
+<ul class="navbar">
+<li><a href="{{ top_section.permalink }}">{{ top_section.title }}</a></li>
+{%- for sub_section in top_section.subsections -%}
+{%- set temp_section = get_section(path=sub_section) -%}
+<li><a href="{{ temp_section.permalink }}">{{ temp_section.title }}</a></li>
+{%- endfor -%}
+</ul>
+{% endmacro %}

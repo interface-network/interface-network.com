@@ -1,11 +1,15 @@
 +++
-title = "Interface.Network"
+
+title = "Home"
+
+sort_by = "weight"
+weight = 0
 
 +++
 
 **We envision a world where societies and communities have choice and control, through participation and dialogue to engage in the co-construction of responsible technologies.**
 
-Interface.Network is an action and research technology governance agency. We foster collaboration and narrative building to overcome complex issues and power imbalances. We aim towards the co-creation of culturally sensitive and approachable networks, systems and processes.
+Interface Network is an action and research technology governance agency. We foster collaboration and narrative building to overcome complex issues and power imbalances. We aim towards the co-creation of culturally sensitive and approachable networks, systems and processes.
 
 
 <script language="JavaScript"><!--
