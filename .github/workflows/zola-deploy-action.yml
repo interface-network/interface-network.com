@@ -14,3 +14,4 @@ jobs:
       env:
         PAGES_BRANCH: gh-pages
         TOKEN: ${{ secrets.TOKEN }}
+        BUILD_THEMES: false
