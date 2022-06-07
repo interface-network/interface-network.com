@@ -5,3 +5,11 @@ description = "Interface.Network is an action and research technology governance
 +++
 ## Hello World!
 _We are just getting started. Come back at a later date to learn more!_
+
+<script language="JavaScript"><!--
+var name = "contact";
+var domain = "interface-network.com ";
+document.write('<a href=\"mailto:' + name + '@' + domain + '\">');
+document.write(name + '@' + domain + '</a>');
+// --></script>
+<br/>
