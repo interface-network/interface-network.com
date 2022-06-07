@@ -3,7 +3,7 @@ base_url = "https://interface-network.github.io/site/"
 title = "Interface Network"
 
 # Whether to automatically compile all Sass files in the sass directory
-compile_sass = yes
+compile_sass = true
 
 # Whether to build a search index to be used later on by a JavaScript library
 build_search_index = true
