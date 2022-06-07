@@ -5,11 +5,12 @@ on:
 name: Build and deploy on push
 jobs:
   build:
-    name: zbrox/zola-deploy-action
+    name: shalzz/zola-deploy-action
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@master
-    - name: zbrox/zola-deploy-action
-      uses: zbrox/zola-deploy-action@master
+    - name: shalzz/zola-deploy-action
+      uses: shalzz/zola-deploy-action@master
       env:
-        TOKEN: ${{ secrets.TOKEN }}
+        PAGES_BRANCH: gh-pages
+        TOKEN: ${{ secrets.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 }}
