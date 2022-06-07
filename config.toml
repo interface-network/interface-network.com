@@ -15,3 +15,5 @@ highlight_code = false
 
 [extra]
 # Put all your custom variables here
+
+theme = "tale-zola"
