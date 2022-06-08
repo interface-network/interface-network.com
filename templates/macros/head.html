@@ -2,3 +2,14 @@
 <!-- Site Styles -->
 <link rel="stylesheet" href="{{ get_url(path="style.css") | safe }}">
 {% endmacro %}
+
+{% macro title() %}
+{% if section.title %}
+{% set title = config.title ~ config.extra.title_spacer ~ section.title %}
+{% elif page.title %}
+{% set title = config.title ~ config.extra.title_spacer ~ page.title %}
+{% else %}
+{% set title = config.title %}
+{% endif %}
+<title>{{ title }}</title>
+{% endmacro %}

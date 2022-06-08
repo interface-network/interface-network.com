@@ -1,0 +1,10 @@
+{% macro page_title() %}
+{% if section.title %}
+{% set title = section.title %}
+{% elif page.title %}
+{% set title = page.title %}
+{% else %}
+{% set title = config.title %}
+{% endif %}
+<h1>{{ title }}</h1>
+{% endmacro %}
