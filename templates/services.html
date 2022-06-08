@@ -1,0 +1,11 @@
+{%- extends "section.html" -%}
+{% block content %}
+<p><em>{{ section.description }}</em></p>
+{% if section.extra.service %}
+<h2>Our Services</h2>
+{% for service in section.extra.service %}
+<h3>{{ service.name | safe }}</h3>
+<p><small>{{ service.description }}</small></p>
+{% endfor %}
+{% endif %}
+{% endblock content %}

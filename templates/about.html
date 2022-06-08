@@ -1,0 +1,23 @@
+{%- extends "section.html" -%}
+{% block content %}
+<p><em>{{ section.description }}</em></p>
+{% if section.extra.team %}
+{% if section.extra.team_photo_size %}
+{% set team_photo_size = section.extra.team_photo_size %}
+{% else %}
+{% set team_photo_size = 200 %}
+{% endif %}
+<h2>The Team</h2>
+{% for member in section.extra.team %}
+<div>
+<h3>{{ member.name | safe }}</h3>
+{% set image_path = section.relative_path | replace(from="_index.md", to=member.photo) %}
+{% set image = resize_image(path=image_path, width=team_photo_size, height=team_photo_size, op="fill") %}
+<img src="{{ image.url | safe }}" />
+<p><b>{{ member.title | safe }}</b></p>
+<p>{{ member.about | safe }}</p>
+<a href="{{ member.linkedin | safe }}" target="_blank">LinkedIn</a>
+</div>
+{% endfor %}
+{% endif %}
+{% endblock content %}
