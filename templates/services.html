@@ -1,11 +1,21 @@
 {%- extends "section.html" -%}
 {% block content %}
-<p><em>{{ section.description }}</em></p>
+<p><em>{{ section.description | safe }}</em></p>
 {% if section.extra.service %}
 <h2>Our Services</h2>
 {% for service in section.extra.service %}
 <h3>{{ service.name | safe }}</h3>
-<p><small>{{ service.description }}</small></p>
+{% for paragraph in service.description %}
+<p>{{ paragraph | safe }}</p>
+{% endfor %}
+{% if service.offerings %}
+<h4>Service Offerings</h4>
+<ul>
+{% for offering in service.offerings %}
+<li>{{ offering }}</li>
+{% endfor %}
+</ul>
+{% endif %}
 {% endfor %}
 {% endif %}
 {% endblock content %}

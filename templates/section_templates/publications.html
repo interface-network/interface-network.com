@@ -1,0 +1,16 @@
+{%- extends "section.html" -%}
+{% block content %}
+{% if section.description %}
+<p>{{ section.description | safe }}</p>
+{% endif %}
+{% if not section.pages %}
+<p><b>There are no publications right now. Please check back later!</b></p>
+{% else %}
+<h2>Articles</h2>
+{% for article in section.pages %}
+<h3>{{ article.title }}</h3>
+<p><em>{{ article.description }}</em></p>
+<a href="{{ article.permalink | safe }}">Read now...</a>
+{% endfor %}
+{% endif %}
+{% endblock content %}
